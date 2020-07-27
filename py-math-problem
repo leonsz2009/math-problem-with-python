@@ -1,0 +1,40 @@
+'''
+this programme is for some math problem
+'''
+class meet_and_chase():    #相遇追及算法
+    class meet():          #相遇
+        def what_time(self,distance,speed1,speed2):
+            return distance / (speed1 + speed2)
+        def what_distance(self,time,speed1,speed2):
+            return time * (speed1 + speed2)
+        def what_add_speed(self,time,distance):
+            return distance / time
+    class chase():         #追及
+        def what_time(self,distance,speed1,speed2):
+            return distance / ((speed1-speed2) if (speed1 > speed2) else (speed2 - speed1))
+        def what_distance(self,time,speed1,speed2):
+            return time * ((speed1 - speed2) if (speed1 > speed2) else (speed2 - speed1))
+        def what_minus_speed(self,time,distance):
+            return distance / time
+class geometry:
+    def area(self,a,shape):
+        if shape == 'rectangle':
+            return a[0] * a[1]
+        if shape == 'square':
+            return a[0] ** 2
+        if shape == 'circle':
+            return (a[0]**2)*3.141592653589793238
+        if shape == 'triangle':
+            from math import sqrt as s;p = (a[0] + a[1] + a[2])/2
+            return s(p*(p-a[0])*(p-a[1])*(p-a[2]))
+        if shape == 'right-angled triangle':
+            return a[0] * a[1] / 2
+    def circumference (self,a,shape):
+        if shape == 'rectangle':
+            return (a[0] + a[1])*2
+        if shape == 'square':
+            return a[0] * 4
+        if shape == 'circle':
+            return 2*a[0]*3.141592653589793238
+        if shape == 'triangle':
+            return a[0] + a[1] + a[2]
